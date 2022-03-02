@@ -25,13 +25,13 @@ namespace dcl
 		unique_clr_releasable(unique_clr_releasable && other)
 		{
 			remove();
-			this->instance = other.instance;
+			instance = other.instance;
 			other.instance = nullptr;
 		}
 
 		auto remove() -> void
 		{
-			if (this->instance)
+			if (instance)
 				instance->Release();
 
 			instance = nullptr;
@@ -45,7 +45,7 @@ namespace dcl
 		auto operator =(T * rhs) -> void
 		{
 			remove();
-			this->instance = rhs;
+			instance = rhs;
 		}
 
 		operator bool() const noexcept
