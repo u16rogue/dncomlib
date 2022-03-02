@@ -66,6 +66,6 @@ namespace dcl
 		}
 
 	private:
-		T * instance;
+		T * instance { nullptr };
 	};
 }
