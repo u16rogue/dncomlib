@@ -5,8 +5,10 @@ project(dncomlib)
 add_library(${PROJECT_NAME} STATIC
 	"includes/dncomlib/meta_host.hpp"
 	"src/meta_host.cpp"
-	
+
 	"includes/dncomlib/unknown_enumerator.hpp"
+	"src/unknown_enumerator.cpp"
+
 	"includes/dncomlib/unique_clr_releasable.hpp"
 	
 	"includes/dncomlib/dncomlib.hpp"

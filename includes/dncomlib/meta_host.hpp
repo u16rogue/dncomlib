@@ -1,6 +1,7 @@
 #pragma once
 
 #include "unique_clr_releasable.hpp"
+#include "unknown_enumerator.hpp"
 #include <metahost.h>
 
 namespace dcl
@@ -17,6 +18,9 @@ namespace dcl
         auto operator -> () -> ICLRMetaHost *;
         auto operator = (meta_host && rhs) -> void;
         operator bool() const noexcept;
+
+        auto enumerate_loaded_runtimes(void * process_handle) -> dcl::unknown_enumerator;
+
     private:
         dcl::unique_clr_releasable<ICLRMetaHost> instance;
     };
