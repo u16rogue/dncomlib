@@ -48,6 +48,13 @@ namespace dcl
 			instance = rhs;
 		}
 
+		auto operator =(unique_clr_releasable<T> && rhs) -> void
+		{
+			remove();
+			instance = rhs.instance;
+			rhs.instance = nullptr;
+		}
+
 		operator bool() const noexcept
 		{
 			return instance != nullptr;
