@@ -13,6 +13,9 @@ add_library(${PROJECT_NAME} STATIC
 	
 	"includes/dncomlib/dncomlib.hpp"
 	"src/dncomlib.cpp"
+	
+	"includes/dncomlib/runtime_info.hpp"
+	"src/runtime_info.cpp"
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC "includes/")

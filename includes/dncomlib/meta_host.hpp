@@ -4,7 +4,7 @@
 #include "unknown_enumerator.hpp"
 #include <metahost.h>
 
-namespace dcl
+namespace dncomlib
 {
     class meta_host
     {
@@ -19,9 +19,9 @@ namespace dcl
         auto operator = (meta_host && rhs) -> void;
         operator bool() const noexcept;
 
-        auto enumerate_loaded_runtimes(void * process_handle) -> dcl::unknown_enumerator;
+        auto enumerate_loaded_runtimes(void * process_handle) -> dncomlib::unknown_enumerator;
 
     private:
-        dcl::unique_releasable<ICLRMetaHost> instance;
+        dncomlib::unique_releasable<ICLRMetaHost> instance;
     };
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-namespace dcl
+namespace dncomlib
 {
 	// TODO: implement sfinae to check if class has a Release method
 	template <typename T>

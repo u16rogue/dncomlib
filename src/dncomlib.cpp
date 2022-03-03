@@ -2,7 +2,7 @@
 
 #include <Windows.h>
 
-auto dcl::clr_create_instance(const IID & clsid, const IID & riid) -> dcl::meta_host
+auto dncomlib::clr_create_instance(const IID & clsid, const IID & riid) -> dncomlib::meta_host
 {
     ICLRMetaHost * res {};
 
@@ -15,5 +15,5 @@ auto dcl::clr_create_instance(const IID & clsid, const IID & riid) -> dcl::meta_
             _CLRCreateInstance(clsid, riid, reinterpret_cast<LPVOID *>(&res));
     }
 
-    return dcl::meta_host(res);
+    return dncomlib::meta_host(res);
 }
