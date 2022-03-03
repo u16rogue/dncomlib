@@ -37,9 +37,9 @@ dcl::unknown_enumerator::enumerable::enumerable(IEnumUnknown * i_)
 {
 }
 
-auto dcl::unknown_enumerator::enumerable::operator * () -> dcl::unique_clr_releasable<IUnknown>
+auto dcl::unknown_enumerator::enumerable::operator * () -> dcl::unique_releasable<IUnknown>
 {
-    return dcl::unique_clr_releasable<IUnknown>(current);
+    return dcl::unique_releasable<IUnknown>(current);
 }
 
 auto dcl::unknown_enumerator::enumerable::operator ++ () -> void

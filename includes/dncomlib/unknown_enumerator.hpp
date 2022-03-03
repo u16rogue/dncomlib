@@ -1,6 +1,6 @@
 #pragma once
 
-#include "unique_clr_releasable.hpp"
+#include "unique_releasable.hpp"
 #include <metahost.h>
 
 namespace dcl
@@ -12,7 +12,7 @@ namespace dcl
         public:
             enumerable(IEnumUnknown * i_);
 
-            auto operator * () -> dcl::unique_clr_releasable<IUnknown>;
+            auto operator * () -> dcl::unique_releasable<IUnknown>;
             auto operator ++ () -> void;
             auto operator != (const enumerable & rhs) -> bool;
         private:
@@ -35,6 +35,6 @@ namespace dcl
         auto end() -> unknown_enumerator::enumerable;
 
     private:
-        dcl::unique_clr_releasable<IEnumUnknown> instance;
+        dcl::unique_releasable<IEnumUnknown> instance;
     };
 }

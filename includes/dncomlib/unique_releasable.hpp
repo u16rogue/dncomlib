@@ -4,25 +4,25 @@ namespace dcl
 {
 	// TODO: implement sfinae to check if class has a Release method
 	template <typename T>
-	class unique_clr_releasable
+	class unique_releasable
 	{
 	public:
-		unique_clr_releasable(unique_clr_releasable &) = delete;
-		unique_clr_releasable(const unique_clr_releasable &) = delete;
+		unique_releasable(unique_releasable &) = delete;
+		unique_releasable(const unique_releasable &) = delete;
 
-		unique_clr_releasable() = default;
+		unique_releasable() = default;
 
-		~unique_clr_releasable()
+		~unique_releasable()
 		{
 			remove();
 		}
 
-		unique_clr_releasable(T * instance_)
+		unique_releasable(T * instance_)
 			: instance(instance_)
 		{
 		}
 
-		unique_clr_releasable(unique_clr_releasable && other)
+		unique_releasable(unique_releasable && other)
 		{
 			remove();
 			instance = other.instance;
@@ -48,7 +48,7 @@ namespace dcl
 			instance = rhs;
 		}
 
-		auto operator =(unique_clr_releasable<T> && rhs) -> void
+		auto operator =(unique_releasable<T> && rhs) -> void
 		{
 			remove();
 			instance = rhs.instance;

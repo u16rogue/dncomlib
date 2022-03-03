@@ -9,7 +9,7 @@ add_library(${PROJECT_NAME} STATIC
 	"includes/dncomlib/unknown_enumerator.hpp"
 	"src/unknown_enumerator.cpp"
 
-	"includes/dncomlib/unique_clr_releasable.hpp"
+	"includes/dncomlib/unique_releasable.hpp"
 	
 	"includes/dncomlib/dncomlib.hpp"
 	"src/dncomlib.cpp"
