@@ -37,7 +37,7 @@ namespace dncomlib
 			instance = nullptr;
 		}
 
-		auto operator ->() -> T *
+		auto operator ->() const -> T *
 		{
 			return instance;
 		}

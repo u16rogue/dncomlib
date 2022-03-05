@@ -14,5 +14,9 @@ namespace dncomlib
 
         runtime_info() = default;
         runtime_info(ICLRRuntimeInfo *i_);
+
+        
+
+        static auto from_thunk(const dncomlib::unique_releasable<IUnknown> & thunk) -> runtime_info;
     };
 }
