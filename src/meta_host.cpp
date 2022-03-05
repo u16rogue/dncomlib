@@ -3,23 +3,8 @@
 #include <Windows.h>
 
 dncomlib::meta_host::meta_host(ICLRMetaHost * i_)
-    : instance (i_)
+    : dncomlib::unique_releasable<ICLRMetaHost>(i_)
 {
-}
-
-dncomlib::meta_host::operator bool() const noexcept
-{
-    return static_cast<bool>(instance);
-}
-
-auto dncomlib::meta_host::operator = (meta_host && rhs) -> void
-{
-    instance = std::move(rhs.instance);
-}
-
-auto dncomlib::meta_host::operator -> () -> ICLRMetaHost *
-{
-    return *instance.ppinstance();
 }
 
 auto dncomlib::meta_host::enumerate_loaded_runtimes(void * process_handle) -> dncomlib::unknown_enumerator

@@ -7,8 +7,8 @@ namespace dncomlib
 	class unique_releasable
 	{
 	public:
-		unique_releasable(unique_releasable &) = delete;
-		unique_releasable(const unique_releasable &) = delete;
+		unique_releasable(unique_releasable<T> &) = delete;
+		unique_releasable(const unique_releasable<T> &) = delete;
 
 		unique_releasable() = default;
 
@@ -22,7 +22,7 @@ namespace dncomlib
 		{
 		}
 
-		unique_releasable(unique_releasable && other)
+		unique_releasable(unique_releasable<T> && other)
 		{
 			remove();
 			instance = other.instance;
@@ -65,7 +65,7 @@ namespace dncomlib
 			return &instance;
 		}
 
-	private:
+	protected:
 		T * instance { nullptr };
 	};
 }

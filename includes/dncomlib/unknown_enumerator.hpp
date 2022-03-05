@@ -1,7 +1,8 @@
 #pragma once
 
-#include "unique_releasable.hpp"
 #include <metahost.h>
+#include <mscoree.h>
+#include "unique_releasable.hpp"
 
 namespace dncomlib
 {
