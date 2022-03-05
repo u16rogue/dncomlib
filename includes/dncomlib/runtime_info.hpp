@@ -1,6 +1,8 @@
 #pragma once
 
 #include "unique_releasable.hpp"
+
+#include <Windows.h>
 #include <metahost.h>
 #include <mscoree.h>
 
@@ -15,7 +17,7 @@ namespace dncomlib
         runtime_info() = default;
         runtime_info(ICLRRuntimeInfo *i_);
 
-        
+        auto is_started(DWORD * out_startup_flags = nullptr) -> bool;
 
         static auto from_thunk(const dncomlib::unique_releasable<IUnknown> & thunk) -> runtime_info;
     };
