@@ -68,7 +68,7 @@ namespace dncomlib
 		template <int index, typename R, typename... vargs_t>
 		auto vcall(vargs_t... args) -> R
 		{
-			return reinterpret_cast<R(__stdcall***)(vargs_t...)>(instance)[0][index](instance, args...);
+			return reinterpret_cast<R(__stdcall***)(T *, vargs_t...)>(instance)[0][index](instance, args...);
 		}
 
 	protected:
