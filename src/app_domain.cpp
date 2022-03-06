@@ -9,10 +9,13 @@ dncomlib::app_domain::app_domain(IUnknown * i_)
 
 auto dncomlib::app_domain::get_friendly_name() -> std::wstring
 {
-    HRESULT(__fastcall * _gfn)(void *, void *, BSTR *) = nullptr;
+    // x86: (_WORD *)(*(int (__stdcall **)(int, _WORD **))(*(_DWORD *)a3 + 212))(a3, &v78)
+    // x64: (*(__int64 (__fastcall **)(__int64, _WORD **))(*(_QWORD *)v98 + 424i64))(v98, &v89);
+    // TODO: add x64
+    HRESULT(__stdcall * _gfn)(void *, BSTR *) = nullptr;
     _gfn = reinterpret_cast<decltype(_gfn)>(reinterpret_cast<void ***>(instance)[0][53]);
     BSTR name {};
-    _gfn(instance, nullptr, &name);
+    _gfn(instance, &name);
     auto out = std::wstring(name);
     if (name)
         SysFreeString(name);
