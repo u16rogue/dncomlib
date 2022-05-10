@@ -1,10 +1,15 @@
 cmake_minimum_required(VERSION 3.18)
 
-project(dncomlib)
+project(
+	dncomlib
+	LANGUAGES CXX
+	DESCRIPTION "dotNet COM Library for C++"
+	VERSION 1.0
+)
 
 add_library(
 	${PROJECT_NAME}
-	
+	STATIC	
 	"include/dncomlib/unique_releasable.hpp"
 
 	"include/dncomlib/meta_host.hpp"
@@ -26,4 +31,8 @@ add_library(
 	"src/app_domain.cpp"
 )
 
-target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include/")
+target_include_directories(
+	${PROJECT_NAME}
+	PUBLIC
+	"${CMAKE_CURRENT_SOURCE_DIR}/include/"
+)
