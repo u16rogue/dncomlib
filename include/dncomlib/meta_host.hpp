@@ -1,9 +1,8 @@
 #pragma once
 
-#include "unique_releasable.hpp"
-#include "unknown_enumerator.hpp"
-#include <metahost.h>
-#include <mscoree.h>
+#include <dncomlib/unique_releasable.hpp>
+#include <dncomlib/unknown_enumerator.hpp>
+#include <dncomlib/mslib/ICLRMetaHost.hpp>
 
 namespace dncomlib
 {

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "unique_releasable.hpp"
-#include <mscoree.h>
+#include <dncomlib/unique_releasable.hpp>
+#include <dncomlib/mslib/IUnknown.hpp>
 #include <string>
 
 namespace dncomlib

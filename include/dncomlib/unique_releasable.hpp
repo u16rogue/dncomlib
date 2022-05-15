@@ -32,7 +32,7 @@ namespace dncomlib
 		auto remove() -> void
 		{
 			if (instance)
-				instance->Release();
+				instance->Release();	
 
 			instance = nullptr;
 		}

@@ -1,14 +1,15 @@
 #pragma once
 
-#include <metahost.h>
-#include <mscoree.h>
+#include <dncomlib/app_domain.hpp>
+#include <dncomlib/meta_host.hpp>
+#include <dncomlib/unique_releasable.hpp>
+#include <dncomlib/unknown_enumerator.hpp>
+#include <dncomlib/runtime_info.hpp>
+#include <dncomlib/runtime_host.hpp>
 
-#include "meta_host.hpp"
-#include "unique_releasable.hpp"
-#include "unknown_enumerator.hpp"
-#include "runtime_info.hpp"
+#include <dncomlib/mslib/IUnknown.hpp>
 
 namespace dncomlib
 {
-    auto clr_create_instance(const IID & clsid, const IID & riid) -> dncomlib::meta_host;
+    auto clr_create_instance(const GUID & clsid, const GUID & riid) -> dncomlib::meta_host;
 }

@@ -1,5 +1,6 @@
 #include <dncomlib/app_domain.hpp>
 
+#include <Windows.h>
 #include <oleauto.h>
 
 dncomlib::app_domain::app_domain(IUnknown * i_)
@@ -12,7 +13,7 @@ auto dncomlib::app_domain::get_friendly_name() -> std::wstring
     // x86: (_WORD *)(*(int (__stdcall **)(int, _WORD **))(*(_DWORD *)a3 + 212))(a3, &v78)
     // x64: (*(__int64 (__fastcall **)(__int64, _WORD **))(*(_QWORD *)v98 + 424i64))(v98, &v89);
     BSTR name {};
-    if (vcall<53, HRESULT>(&name) != S_OK)
+    if (vcall<53, HRESULT>(&name) != 0)
         return std::wstring();
     
     auto out = std::wstring(name);
@@ -23,7 +24,7 @@ auto dncomlib::app_domain::get_friendly_name() -> std::wstring
 
 auto dncomlib::app_domain::from_unknown(const dncomlib::unique_releasable<IUnknown> & unk) -> app_domain
 {
-    GUID _appdomain_uuid {
+    constexpr GUID _appdomain_uuid {
         .Data1 = 0x5F696DC,
         .Data2 = 0x2B29,
         .Data3 = 0x3663,

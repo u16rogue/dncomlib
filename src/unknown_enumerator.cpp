@@ -44,8 +44,8 @@ auto dncomlib::unknown_enumerator::enumerable::operator * () -> dncomlib::unique
 
 auto dncomlib::unknown_enumerator::enumerable::operator ++ () -> void
 {
-    ULONG fetched {};
-    if (instance->Next(1, &current, &fetched) == S_OK && fetched)
+    unsigned long fetched {};
+    if (instance->Next(1, &current, &fetched) == 0 && fetched)
         return;
     
     current  = nullptr;

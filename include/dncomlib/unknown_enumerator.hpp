@@ -1,8 +1,7 @@
 #pragma once
 
-#include <metahost.h>
-#include <mscoree.h>
-#include "unique_releasable.hpp"
+#include <dncomlib/mslib/IEnumUnknown.hpp>
+#include <dncomlib/unique_releasable.hpp>
 
 namespace dncomlib
 {

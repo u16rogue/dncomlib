@@ -1,10 +1,9 @@
 #pragma once
 
-#include "unique_releasable.hpp"
-#include "runtime_host.hpp"
+#include <dncomlib/unique_releasable.hpp>
+#include <dncomlib/runtime_host.hpp>
 #include <Windows.h>
-#include <metahost.h>
-#include <mscoree.h>
+#include <dncomlib/mslib/ICLRuntimeInfo.hpp>
 
 namespace dncomlib
 {

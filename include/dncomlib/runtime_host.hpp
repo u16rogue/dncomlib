@@ -1,10 +1,8 @@
 #pragma once
 
-#include "unique_releasable.hpp"
-#include "app_domain.hpp"
-
-#include <metahost.h>
-#include <mscoree.h>
+#include <dncomlib/unique_releasable.hpp>
+#include <dncomlib/app_domain.hpp>
+#include <dncomlib/mslib/ICorRuntimeHost.hpp>
 
 namespace dncomlib
 {
