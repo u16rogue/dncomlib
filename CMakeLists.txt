@@ -39,6 +39,13 @@ add_library(
 	"${CMAKE_CURRENT_SOURCE_DIR}/include/dncomlib/mslib/ICLRMetaHost.hpp"
 )
 
+set_target_properties(
+	${PROJECT_NAME}
+	PROPERTIES
+	CXX_STANDARD 20
+	CXX_STANDARD_REQUIRED True
+)
+
 target_include_directories(
 	${PROJECT_NAME}
 	PUBLIC
