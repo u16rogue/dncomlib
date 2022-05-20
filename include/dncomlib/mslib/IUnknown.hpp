@@ -9,7 +9,10 @@ namespace dncomlib
 		unsigned short Data3;
 		unsigned char  Data4[8];
 	};
+}
 
+namespace dncomlib::mslib
+{
 	class IUnknown
 	{
 	public:	

@@ -1,7 +1,7 @@
 #include <dncomlib/runtime_info.hpp>
 
-dncomlib::runtime_info::runtime_info(ICLRRuntimeInfo *i_)
-    : dncomlib::unique_releasable<ICLRRuntimeInfo>(i_)
+dncomlib::runtime_info::runtime_info(mslib::ICLRRuntimeInfo *i_)
+    : dncomlib::unique_releasable<mslib::ICLRRuntimeInfo>(i_)
 {
 }
 
@@ -31,12 +31,12 @@ auto dncomlib::runtime_info::get_host() -> runtime_host
         .Data4 = { 0x9c, 0x40, 0x00, 0xc0, 0x4f, 0xa3, 0x0a, 0x3e }
     };
 
-    ICorRuntimeHost * res {};
+    mslib::ICorRuntimeHost * res {};
     instance->GetInterface(CLSID_CorRuntimeHost, IID_ICorRuntimeHost, reinterpret_cast<LPVOID *>(&res));
     return runtime_host(res);
 }
 
-auto dncomlib::runtime_info::from_unknown(const dncomlib::unique_releasable<IUnknown> & unk) -> runtime_info
+auto dncomlib::runtime_info::from_unknown(const dncomlib::unique_releasable<mslib::IUnknown> & unk) -> runtime_info
 {
     constexpr GUID IID_ICLRRuntimeInfo = {
 		.Data1 = 0xBD39D1D2,
@@ -45,7 +45,7 @@ auto dncomlib::runtime_info::from_unknown(const dncomlib::unique_releasable<IUnk
         .Data4 = { 0x89, 0xB0, 0xB4, 0xB0, 0xCB, 0x46, 0x68, 0x91 }
     };
 
-    ICLRRuntimeInfo * res {};
+    mslib::ICLRRuntimeInfo * res {};
     unk->QueryInterface(IID_ICLRRuntimeInfo, reinterpret_cast<void **>(&res));
     return runtime_info(res);
 }

@@ -2,7 +2,7 @@
 
 #include <dncomlib/mslib/IUnknown.hpp>
 
-namespace dncomlib
+namespace dncomlib::mslib
 {
     class ICorRuntimeHost: public IUnknown
     {

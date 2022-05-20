@@ -2,14 +2,14 @@
 #include <utility>
 #include <Windows.h>
 
-dncomlib::meta_host::meta_host(ICLRMetaHost * i_)
-    : dncomlib::unique_releasable<ICLRMetaHost>(i_)
+dncomlib::meta_host::meta_host(mslib::ICLRMetaHost * i_)
+    : dncomlib::unique_releasable<mslib::ICLRMetaHost>(i_)
 {
 }
 
 auto dncomlib::meta_host::enumerate_loaded_runtimes(void * process_handle) -> dncomlib::unknown_enumerator
 {
-    IEnumUnknown * res {};
+    mslib::IEnumUnknown * res {};
     if (instance->EnumerateLoadedRuntimes(reinterpret_cast<HANDLE>(process_handle), &res) != 0)
         return dncomlib::unknown_enumerator(nullptr);
 

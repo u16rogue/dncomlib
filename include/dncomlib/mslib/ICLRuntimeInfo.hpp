@@ -1,7 +1,7 @@
 #pragma once
 #include <dncomlib/mslib/IUnknown.hpp>
 
-namespace dncomlib
+namespace dncomlib::mslib
 {
     class ICLRRuntimeInfo : public IUnknown
     {

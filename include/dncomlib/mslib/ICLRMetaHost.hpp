@@ -2,7 +2,7 @@
 #include <dncomlib/mslib/IUnknown.hpp>
 #include <dncomlib/mslib/IEnumUnknown.hpp>
 
-namespace dncomlib
+namespace dncomlib::mslib
 {
     class ICLRMetaHost: public IUnknown
     {

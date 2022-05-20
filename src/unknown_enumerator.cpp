@@ -2,7 +2,7 @@
 
 #include <utility>
 
-dncomlib::unknown_enumerator::unknown_enumerator(IEnumUnknown * i_)
+dncomlib::unknown_enumerator::unknown_enumerator(mslib::IEnumUnknown * i_)
     : instance(i_)
 {
 }
@@ -12,7 +12,7 @@ dncomlib::unknown_enumerator::operator bool () const noexcept
     return static_cast<bool>(instance);
 }
 
-auto dncomlib::unknown_enumerator::operator -> () -> IEnumUnknown *
+auto dncomlib::unknown_enumerator::operator -> () -> mslib::IEnumUnknown *
 {
     return *instance.ppinstance();
 }
@@ -32,14 +32,14 @@ auto dncomlib::unknown_enumerator::end() -> unknown_enumerator::enumerable
     return unknown_enumerator::enumerable(nullptr);
 }
 
-dncomlib::unknown_enumerator::enumerable::enumerable(IEnumUnknown * i_)
+dncomlib::unknown_enumerator::enumerable::enumerable(mslib::IEnumUnknown * i_)
     : instance(i_), current(nullptr)
 {
 }
 
-auto dncomlib::unknown_enumerator::enumerable::operator * () -> dncomlib::unique_releasable<IUnknown>
+auto dncomlib::unknown_enumerator::enumerable::operator * () -> dncomlib::unique_releasable<mslib::IUnknown>
 {
-    return dncomlib::unique_releasable<IUnknown>(current);
+    return dncomlib::unique_releasable<mslib::IUnknown>(current);
 }
 
 auto dncomlib::unknown_enumerator::enumerable::operator ++ () -> void

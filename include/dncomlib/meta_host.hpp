@@ -6,11 +6,11 @@
 
 namespace dncomlib
 {
-    class meta_host : public dncomlib::unique_releasable<ICLRMetaHost>
+    class meta_host : public dncomlib::unique_releasable<mslib::ICLRMetaHost>
     {
     public:
         meta_host() = default;
-        meta_host(ICLRMetaHost * i_);
+        meta_host(mslib::ICLRMetaHost * i_);
 
         auto enumerate_loaded_runtimes(void * process_handle) -> dncomlib::unknown_enumerator;
     };
