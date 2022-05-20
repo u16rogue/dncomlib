@@ -11,5 +11,7 @@
 
 namespace dncomlib
 {
-    auto clr_create_instance(const GUID & clsid, const GUID & riid) -> dncomlib::meta_host;
+    auto clr_create_instance(const GUID & clsid, const GUID & riid) -> dncomlib::unique_releasable<dncomlib::mslib::IUnknown>;
+
+    auto clr_create_meta_host_instance() -> dncomlib::meta_host;
 }

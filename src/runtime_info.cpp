@@ -49,3 +49,11 @@ auto dncomlib::runtime_info::from_unknown(const dncomlib::unique_releasable<msli
     unk->QueryInterface(IID_ICLRRuntimeInfo, reinterpret_cast<void **>(&res));
     return runtime_info(res);
 }
+
+auto dncomlib::runtime_info::get_version_string() -> std::wstring
+{
+    wchar_t ver[256] {};
+    unsigned long nv = 256;
+    instance->GetVersionString(ver, &nv); 
+    return std::wstring(ver);
+}

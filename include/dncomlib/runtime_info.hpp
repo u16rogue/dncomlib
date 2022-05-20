@@ -18,6 +18,7 @@ namespace dncomlib
 
         auto is_started(DWORD * out_startup_flags = nullptr) -> bool;
         auto get_host() -> runtime_host;
+        auto get_version_string() -> std::wstring;
 
         static auto from_unknown(const dncomlib::unique_releasable<mslib::IUnknown> & unk) -> runtime_info;
     };
