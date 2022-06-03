@@ -32,11 +32,15 @@ add_library(
 	"${CMAKE_CURRENT_SOURCE_DIR}/include/dncomlib/app_domain.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/src/app_domain.cpp"
 
+	"${CMAKE_CURRENT_SOURCE_DIR}/include/dncomlib/clr_debugging.hpp"
+	"${CMAKE_CURRENT_SOURCE_DIR}/src/clr_debugging.cpp"
+
 	"${CMAKE_CURRENT_SOURCE_DIR}/include/dncomlib/mslib/IUnknown.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/include/dncomlib/mslib/ICorRuntimeHost.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/include/dncomlib/mslib/ICLRuntimeInfo.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/include/dncomlib/mslib/IEnumUnknown.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/include/dncomlib/mslib/ICLRMetaHost.hpp"
+	"${CMAKE_CURRENT_SOURCE_DIR}/include/dncomlib/mslib/ICLRDebugging.hpp"
 )
 
 set_target_properties(

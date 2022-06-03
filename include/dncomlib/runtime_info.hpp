@@ -10,9 +10,6 @@ namespace dncomlib
     class runtime_info : public dncomlib::unique_releasable<mslib::ICLRRuntimeInfo>
     {
     public:
-        runtime_info(runtime_info &) = delete;
-        runtime_info(const runtime_info &) = delete;
-
         runtime_info() = default;
         runtime_info(mslib::ICLRRuntimeInfo *i_);
 

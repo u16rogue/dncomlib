@@ -10,8 +10,6 @@ dncomlib::meta_host::meta_host(mslib::ICLRMetaHost * i_)
 auto dncomlib::meta_host::enumerate_loaded_runtimes(void * process_handle) -> dncomlib::unknown_enumerator
 {
     mslib::IEnumUnknown * res {};
-    if (instance->EnumerateLoadedRuntimes(reinterpret_cast<HANDLE>(process_handle), &res) != 0)
-        return dncomlib::unknown_enumerator(nullptr);
-
+    instance->EnumerateLoadedRuntimes(reinterpret_cast<HANDLE>(process_handle), &res) ;
     return dncomlib::unknown_enumerator(res);
 }

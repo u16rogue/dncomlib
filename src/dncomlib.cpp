@@ -39,3 +39,22 @@ auto dncomlib::clr_create_meta_host_instance() -> dncomlib::meta_host
 
 	return dncomlib::meta_host(reinterpret_cast<mslib::ICLRMetaHost *>(dn_generic_create_instance(CLSID_CLRMetaHost, IID_ICLRMetaHost)));
 }
+
+auto dncomlib::clr_create_debugging() -> clr_debugging
+{
+	constexpr dncomlib::GUID CLSID_CLRDebugging = {
+		.Data1 = 0xbacc578d,
+		.Data2 = 0xfbdd,
+		.Data3 = 0x48a4,
+		.Data4 = { 0x96, 0x9f, 0x2, 0xd9, 0x32, 0xb7, 0x46, 0x34 }
+	};
+
+	constexpr dncomlib::GUID IID_ICLRDebugging = {
+		.Data1 = 0xd28f3c5a,
+		.Data2 = 0x9634,
+		.Data3 = 0x4206,
+		.Data4 = { 0xa5, 0x9, 0x47, 0x75, 0x52, 0xee, 0xfb, 0x10 }
+	};
+
+	return dncomlib::clr_debugging(reinterpret_cast<mslib::ICLRDebugging *>(dn_generic_create_instance(CLSID_CLRDebugging, IID_ICLRDebugging)));
+}
